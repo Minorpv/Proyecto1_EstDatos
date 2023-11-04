@@ -1,0 +1,11 @@
+C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDatos\bin\Debug\Proyecto1EstructuradeDatos.exe.config
+C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDatos\bin\Debug\Proyecto1EstructuradeDatos.exe
+C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDatos\bin\Debug\Proyecto1EstructuradeDatos.pdb
+C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDatos\obj\Debug\Proyecto1EstructuradeDatos.csproj.AssemblyReference.cache
+C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDatos\obj\Debug\Proyecto1EstructuradeDatos.FormMenu.resources
+C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDatos\obj\Debug\Proyecto1EstructuradeDatos.Properties.Resources.resources
+C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDatos\obj\Debug\Proyecto1EstructuradeDatos.csproj.GenerateResource.cache
+C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDatos\obj\Debug\Proyecto1EstructuradeDatos.csproj.CoreCompileInputs.cache
+C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDatos\obj\Debug\Proyecto1EstructuradeDatos.exe
+C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDatos\obj\Debug\Proyecto1EstructuradeDatos.pdb
+C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDatos\obj\Debug\Proyecto1EstructuradeDatos.FormListaProd.resources
