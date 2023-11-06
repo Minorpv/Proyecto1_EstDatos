@@ -44,8 +44,6 @@
             this.textBox_nomMod = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_CodMod = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +66,6 @@
             this.listBox_Prod.Name = "listBox_Prod";
             this.listBox_Prod.Size = new System.Drawing.Size(493, 368);
             this.listBox_Prod.TabIndex = 1;
-            this.listBox_Prod.SelectedIndexChanged += new System.EventHandler(this.listBox_Prod_SelectedIndexChanged);
             // 
             // button_AgregarProd
             // 
@@ -82,7 +79,7 @@
             // 
             // button_ModProd
             // 
-            this.button_ModProd.Location = new System.Drawing.Point(86, 156);
+            this.button_ModProd.Location = new System.Drawing.Point(86, 140);
             this.button_ModProd.Name = "button_ModProd";
             this.button_ModProd.Size = new System.Drawing.Size(75, 23);
             this.button_ModProd.TabIndex = 3;
@@ -115,7 +112,7 @@
             this.groupBox1.Controls.Add(this.button_AgregarProd);
             this.groupBox1.Controls.Add(this.textBox_CodProd);
             this.groupBox1.Controls.Add(this.label_CodProd);
-            this.groupBox1.Location = new System.Drawing.Point(548, 12);
+            this.groupBox1.Location = new System.Drawing.Point(548, 208);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(240, 230);
             this.groupBox1.TabIndex = 10;
@@ -166,11 +163,9 @@
             this.groupBox2.Controls.Add(this.button_ModProd);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.textBox_CodMod);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(548, 251);
+            this.groupBox2.Location = new System.Drawing.Point(548, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(240, 187);
+            this.groupBox2.Size = new System.Drawing.Size(240, 172);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Seleccione el producto a modificar";
@@ -181,14 +176,14 @@
             this.comboBox_tipoMod.Items.AddRange(new object[] {
             "Bebida",
             "Plato fuerte"});
-            this.comboBox_tipoMod.Location = new System.Drawing.Point(74, 112);
+            this.comboBox_tipoMod.Location = new System.Drawing.Point(74, 96);
             this.comboBox_tipoMod.Name = "comboBox_tipoMod";
             this.comboBox_tipoMod.Size = new System.Drawing.Size(137, 21);
             this.comboBox_tipoMod.TabIndex = 9;
             // 
             // textBox_nomMod
             // 
-            this.textBox_nomMod.Location = new System.Drawing.Point(74, 69);
+            this.textBox_nomMod.Location = new System.Drawing.Point(74, 53);
             this.textBox_nomMod.Name = "textBox_nomMod";
             this.textBox_nomMod.Size = new System.Drawing.Size(137, 20);
             this.textBox_nomMod.TabIndex = 8;
@@ -196,7 +191,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 69);
+            this.label1.Location = new System.Drawing.Point(12, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 7;
@@ -205,27 +200,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 112);
+            this.label2.Location = new System.Drawing.Point(18, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Tipo";
-            // 
-            // textBox_CodMod
-            // 
-            this.textBox_CodMod.Location = new System.Drawing.Point(74, 29);
-            this.textBox_CodMod.Name = "textBox_CodMod";
-            this.textBox_CodMod.Size = new System.Drawing.Size(137, 20);
-            this.textBox_CodMod.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Codigo";
             // 
             // FormListaProd
             // 
@@ -266,7 +245,5 @@
         private System.Windows.Forms.TextBox textBox_nomMod;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox_CodMod;
-        private System.Windows.Forms.Label label3;
     }
 }

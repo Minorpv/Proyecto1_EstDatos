@@ -47,9 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClsListaProd.cs" />
     <Compile Include="ClsPedidos.cs" />
     <Compile Include="Clsproductos.cs" />
+    <Compile Include="FormListaPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaPedidos.Designer.cs">
+      <DependentUpon>FormListaPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormListaProd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +69,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormListaPedidos.resx">
+      <DependentUpon>FormListaPedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormListaProd.resx">
       <DependentUpon>FormListaProd.cs</DependentUpon>
     </EmbeddedResource>

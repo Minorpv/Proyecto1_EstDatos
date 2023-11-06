@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,18 +23,18 @@ namespace Proyecto1EstructuradeDatos
         private void FormListaProd_Load(object sender, EventArgs e)
         {
             //Se inicializa la lista en la pestaña ClslistaProd
-            ClsListaProd.inicializarLista();
+            int[] arraycod = ClsProductos.InicializarArrayCod();
+            string[] arrayNomPlato = ClsProductos.InicializarArrayNomProd();
+            string[] arrayTipo = ClsProductos.InicializarArrayTipo();
+            for (int i = 0; i < arraycod.Length; i++) 
+            {
+                string cod = arraycod[i].ToString();
+                string nomPlato = arrayNomPlato[i].ToString();
+                string tipo = arrayTipo[i].ToString();
+                listBox_Prod.Items.Add($"{cod} |  {nomPlato}        {tipo}");
+            }
             // se coloca el menu base que se implementó
-            listBox_Prod.Items.Add("01 ||  Pollo             Plato fuerte");
-            listBox_Prod.Items.Add("02 ||  Cerdo             Plato fuerte");
-            listBox_Prod.Items.Add("03 ||  Pescado           Plato fuerte");
-            listBox_Prod.Items.Add("04 ||  Lasagna           Plato fuerte");
-            listBox_Prod.Items.Add("05 ||  Espagueti         Plato fuerte");
-            listBox_Prod.Items.Add("06 ||  Bebida natural    Bebida");
-            listBox_Prod.Items.Add("07 ||  Agua              Bebida");
-            listBox_Prod.Items.Add("08 ||  Gaseosa           Bebida");
-            listBox_Prod.Items.Add("09 ||  Té                Bebida");
-            listBox_Prod.Items.Add("10 ||  Café              Bebida");
+
             //Se pone siempre al ingresar a  la pestaña el mouse en la textbox del codigo
             textBox_CodProd.Focus();
         }
@@ -45,13 +46,14 @@ namespace Proyecto1EstructuradeDatos
 
         private void button_AgregarProd_Click(object sender, EventArgs e)
         {
+            int cod = int.Parse(textBox_CodProd.Text);
+            string nom = textBox_NombreProd.Text;
+            string tipo = comboBox_TipoProd.Text;
             //Se toman los datos de las textbox se agrupan en un string y se añade a la listbox
             string dato_prod = string.Concat(textBox_CodProd.Text, " ||", textBox_NombreProd.Text, "       ", comboBox_TipoProd.Text);
-            //Se añaden los datos a la listade productos
-            Clsproductos p = new Clsproductos(int.Parse(textBox_CodProd.Text), textBox_NombreProd.Text, comboBox_TipoProd.Text);
-            ClsListaProd.agregaraLista(p);
-            //Se añade la información en la listbox
             listBox_Prod.Items.Add(dato_prod);
+            //Se añade la información en la listbox
+            //Clsproductos.agregarArray(cod, nom, tipo);
             //Se limpia la información de las textbox
             textBox_CodProd.Clear();
             textBox_NombreProd.Clear();
@@ -69,19 +71,9 @@ namespace Proyecto1EstructuradeDatos
 
         }
 
-        public void copiarinfomod(string info) 
-        { 
-            //Se copia la información ingresada en la 
-            listBox_Prod.SelectedItem = info;
-        }
-
         private void listBox_Prod_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int selecionMod = listBox_Prod.SelectedIndex;
-            string infoNom = ClsListaProd.modListaNom(selecionMod);
-            string infoTipo = ClsListaProd.modListaTipo(selecionMod);
-            string info = $"{selecionMod + 1} || {infoNom}       {infoTipo}";
-            copiarinfomod(info);
+
         }
     }
 }

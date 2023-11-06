@@ -9,3 +9,4 @@ C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDato
 C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDatos\obj\Debug\Proyecto1EstructuradeDatos.exe
 C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDatos\obj\Debug\Proyecto1EstructuradeDatos.pdb
 C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDatos\obj\Debug\Proyecto1EstructuradeDatos.FormListaProd.resources
+C:\Users\minor\source\repos\Proyecto1EstructuradeDatos\Proyecto1EstructuradeDatos\obj\Debug\Proyecto1EstructuradeDatos.FormListaPedidos.resources

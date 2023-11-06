@@ -31,20 +31,24 @@
             this.components = new System.ComponentModel.Container();
             this.labelTituloMenu = new System.Windows.Forms.Label();
             this.buttonAgregar = new System.Windows.Forms.Button();
-            this.buttonMod = new System.Windows.Forms.Button();
-            this.groupBoxPedido = new System.Windows.Forms.GroupBox();
-            this.comboBoxMod = new System.Windows.Forms.ComboBox();
-            this.comboBoxAgregar = new System.Windows.Forms.ComboBox();
+            this.buttonDel = new System.Windows.Forms.Button();
+            this.groupBoxModPedido = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxAgregarPlato = new System.Windows.Forms.ComboBox();
             this.labelPedido = new System.Windows.Forms.Label();
             this.buttonEnviar = new System.Windows.Forms.Button();
             this.BievenidoNombre = new System.Windows.Forms.Label();
-            this.labelNombreMenu = new System.Windows.Forms.Label();
             this.textBoxNombreMenu = new System.Windows.Forms.TextBox();
-            this.labelHora = new System.Windows.Forms.Label();
             this.textBoxHora = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button_lista_prod = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxProdPedidos = new System.Windows.Forms.ListBox();
+            this.buttonProdCocina = new System.Windows.Forms.Button();
+            this.buttonListPedido = new System.Windows.Forms.Button();
+            this.labelHora = new System.Windows.Forms.Label();
+            this.labelNombreMenu = new System.Windows.Forms.Label();
+            this.groupBoxPedido = new System.Windows.Forms.GroupBox();
+            this.groupBoxModPedido.SuspendLayout();
             this.groupBoxPedido.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +57,7 @@
             this.labelTituloMenu.AutoSize = true;
             this.labelTituloMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTituloMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.labelTituloMenu.Location = new System.Drawing.Point(343, 9);
+            this.labelTituloMenu.Location = new System.Drawing.Point(344, 9);
             this.labelTituloMenu.Name = "labelTituloMenu";
             this.labelTituloMenu.Size = new System.Drawing.Size(103, 39);
             this.labelTituloMenu.TabIndex = 0;
@@ -61,66 +65,61 @@
             // 
             // buttonAgregar
             // 
-            this.buttonAgregar.Location = new System.Drawing.Point(23, 56);
+            this.buttonAgregar.Location = new System.Drawing.Point(194, 38);
             this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAgregar.Size = new System.Drawing.Size(104, 21);
             this.buttonAgregar.TabIndex = 1;
             this.buttonAgregar.Text = "Agregar";
             this.buttonAgregar.UseVisualStyleBackColor = true;
             this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
             // 
-            // buttonMod
+            // buttonDel
             // 
-            this.buttonMod.Location = new System.Drawing.Point(23, 126);
-            this.buttonMod.Name = "buttonMod";
-            this.buttonMod.Size = new System.Drawing.Size(75, 23);
-            this.buttonMod.TabIndex = 2;
-            this.buttonMod.Text = "Modificar";
-            this.buttonMod.UseVisualStyleBackColor = true;
+            this.buttonDel.Location = new System.Drawing.Point(194, 92);
+            this.buttonDel.Name = "buttonDel";
+            this.buttonDel.Size = new System.Drawing.Size(104, 23);
+            this.buttonDel.TabIndex = 2;
+            this.buttonDel.Text = "Eliminar";
+            this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
-            // groupBoxPedido
+            // groupBoxModPedido
             // 
-            this.groupBoxPedido.Controls.Add(this.comboBoxMod);
-            this.groupBoxPedido.Controls.Add(this.comboBoxAgregar);
-            this.groupBoxPedido.Controls.Add(this.buttonMod);
-            this.groupBoxPedido.Controls.Add(this.buttonAgregar);
-            this.groupBoxPedido.Location = new System.Drawing.Point(12, 131);
-            this.groupBoxPedido.Name = "groupBoxPedido";
-            this.groupBoxPedido.Size = new System.Drawing.Size(389, 174);
-            this.groupBoxPedido.TabIndex = 4;
-            this.groupBoxPedido.TabStop = false;
-            this.groupBoxPedido.Text = "Pedido";
+            this.groupBoxModPedido.Controls.Add(this.label1);
+            this.groupBoxModPedido.Controls.Add(this.comboBoxAgregarPlato);
+            this.groupBoxModPedido.Controls.Add(this.buttonDel);
+            this.groupBoxModPedido.Controls.Add(this.buttonAgregar);
+            this.groupBoxModPedido.Location = new System.Drawing.Point(9, 107);
+            this.groupBoxModPedido.Name = "groupBoxModPedido";
+            this.groupBoxModPedido.Size = new System.Drawing.Size(313, 137);
+            this.groupBoxModPedido.TabIndex = 4;
+            this.groupBoxModPedido.TabStop = false;
+            this.groupBoxModPedido.Text = "Pedido";
             // 
-            // comboBoxMod
+            // label1
             // 
-            this.comboBoxMod.FormattingEnabled = true;
-            this.comboBoxMod.Location = new System.Drawing.Point(133, 128);
-            this.comboBoxMod.Name = "comboBoxMod";
-            this.comboBoxMod.Size = new System.Drawing.Size(210, 21);
-            this.comboBoxMod.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Selecione la linea que desea borrar";
             // 
-            // comboBoxAgregar
+            // comboBoxAgregarPlato
             // 
-            this.comboBoxAgregar.FormattingEnabled = true;
-            this.comboBoxAgregar.Items.AddRange(new object[] {
-            "Pollo",
-            "Res",
-            "Cerdo",
-            "Lasagna",
-            "Chopsuey",
-            "Canelones",
-            "Bebida Natural"});
-            this.comboBoxAgregar.Location = new System.Drawing.Point(133, 57);
-            this.comboBoxAgregar.Name = "comboBoxAgregar";
-            this.comboBoxAgregar.Size = new System.Drawing.Size(210, 21);
-            this.comboBoxAgregar.TabIndex = 4;
+            this.comboBoxAgregarPlato.FormattingEnabled = true;
+            this.comboBoxAgregarPlato.Location = new System.Drawing.Point(13, 38);
+            this.comboBoxAgregarPlato.Name = "comboBoxAgregarPlato";
+            this.comboBoxAgregarPlato.Size = new System.Drawing.Size(155, 21);
+            this.comboBoxAgregarPlato.TabIndex = 4;
             // 
             // labelPedido
             // 
             this.labelPedido.AutoSize = true;
+            this.labelPedido.BackColor = System.Drawing.SystemColors.Window;
             this.labelPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPedido.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelPedido.Location = new System.Drawing.Point(550, 71);
+            this.labelPedido.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.labelPedido.Location = new System.Drawing.Point(102, 73);
             this.labelPedido.Name = "labelPedido";
             this.labelPedido.Size = new System.Drawing.Size(79, 25);
             this.labelPedido.TabIndex = 5;
@@ -128,12 +127,13 @@
             // 
             // buttonEnviar
             // 
-            this.buttonEnviar.Location = new System.Drawing.Point(84, 388);
+            this.buttonEnviar.Location = new System.Drawing.Point(31, 304);
             this.buttonEnviar.Name = "buttonEnviar";
-            this.buttonEnviar.Size = new System.Drawing.Size(257, 40);
+            this.buttonEnviar.Size = new System.Drawing.Size(257, 47);
             this.buttonEnviar.TabIndex = 7;
             this.buttonEnviar.Text = "Enviar pedido";
             this.buttonEnviar.UseVisualStyleBackColor = true;
+            this.buttonEnviar.Click += new System.EventHandler(this.buttonEnviar_Click);
             // 
             // BievenidoNombre
             // 
@@ -145,36 +145,20 @@
             this.BievenidoNombre.Size = new System.Drawing.Size(0, 39);
             this.BievenidoNombre.TabIndex = 9;
             // 
-            // labelNombreMenu
-            // 
-            this.labelNombreMenu.AutoSize = true;
-            this.labelNombreMenu.Location = new System.Drawing.Point(60, 95);
-            this.labelNombreMenu.Name = "labelNombreMenu";
-            this.labelNombreMenu.Size = new System.Drawing.Size(50, 13);
-            this.labelNombreMenu.TabIndex = 10;
-            this.labelNombreMenu.Text = "Nombre: ";
-            // 
             // textBoxNombreMenu
             // 
-            this.textBoxNombreMenu.Location = new System.Drawing.Point(145, 92);
+            this.textBoxNombreMenu.Location = new System.Drawing.Point(62, 23);
             this.textBoxNombreMenu.Name = "textBoxNombreMenu";
             this.textBoxNombreMenu.Size = new System.Drawing.Size(210, 20);
             this.textBoxNombreMenu.TabIndex = 11;
             // 
-            // labelHora
-            // 
-            this.labelHora.AutoSize = true;
-            this.labelHora.Location = new System.Drawing.Point(60, 339);
-            this.labelHora.Name = "labelHora";
-            this.labelHora.Size = new System.Drawing.Size(33, 13);
-            this.labelHora.TabIndex = 12;
-            this.labelHora.Text = "Hora:";
-            // 
             // textBoxHora
             // 
-            this.textBoxHora.Location = new System.Drawing.Point(145, 336);
+            this.textBoxHora.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxHora.Location = new System.Drawing.Point(47, 71);
             this.textBoxHora.Name = "textBoxHora";
-            this.textBoxHora.Size = new System.Drawing.Size(210, 20);
+            this.textBoxHora.ReadOnly = true;
+            this.textBoxHora.Size = new System.Drawing.Size(210, 13);
             this.textBoxHora.TabIndex = 13;
             // 
             // timer1
@@ -183,42 +167,99 @@
             // 
             // button_lista_prod
             // 
-            this.button_lista_prod.Location = new System.Drawing.Point(13, 13);
+            this.button_lista_prod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_lista_prod.Location = new System.Drawing.Point(508, 8);
             this.button_lista_prod.Name = "button_lista_prod";
-            this.button_lista_prod.Size = new System.Drawing.Size(121, 23);
+            this.button_lista_prod.Size = new System.Drawing.Size(129, 47);
             this.button_lista_prod.TabIndex = 14;
             this.button_lista_prod.Text = "Lista de productos";
             this.button_lista_prod.UseVisualStyleBackColor = true;
             this.button_lista_prod.Click += new System.EventHandler(this.button_lista_prod_Click);
             // 
-            // listBox1
+            // listBoxProdPedidos
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(424, 99);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(342, 329);
-            this.listBox1.TabIndex = 15;
+            this.listBoxProdPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxProdPedidos.FormattingEnabled = true;
+            this.listBoxProdPedidos.Location = new System.Drawing.Point(12, 100);
+            this.listBoxProdPedidos.Name = "listBoxProdPedidos";
+            this.listBoxProdPedidos.Size = new System.Drawing.Size(262, 329);
+            this.listBoxProdPedidos.TabIndex = 15;
+            // 
+            // buttonProdCocina
+            // 
+            this.buttonProdCocina.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProdCocina.Location = new System.Drawing.Point(147, 6);
+            this.buttonProdCocina.Name = "buttonProdCocina";
+            this.buttonProdCocina.Size = new System.Drawing.Size(129, 47);
+            this.buttonProdCocina.TabIndex = 16;
+            this.buttonProdCocina.Text = "Productos en cocina";
+            this.buttonProdCocina.UseVisualStyleBackColor = true;
+            // 
+            // buttonListPedido
+            // 
+            this.buttonListPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonListPedido.Location = new System.Drawing.Point(12, 6);
+            this.buttonListPedido.Name = "buttonListPedido";
+            this.buttonListPedido.Size = new System.Drawing.Size(129, 47);
+            this.buttonListPedido.TabIndex = 17;
+            this.buttonListPedido.Text = "Lista de Pedidos";
+            this.buttonListPedido.UseVisualStyleBackColor = true;
+            this.buttonListPedido.Click += new System.EventHandler(this.buttonListPedido_Click);
+            // 
+            // labelHora
+            // 
+            this.labelHora.AutoSize = true;
+            this.labelHora.Location = new System.Drawing.Point(8, 71);
+            this.labelHora.Name = "labelHora";
+            this.labelHora.Size = new System.Drawing.Size(33, 13);
+            this.labelHora.TabIndex = 12;
+            this.labelHora.Text = "Hora:";
+            // 
+            // labelNombreMenu
+            // 
+            this.labelNombreMenu.AutoSize = true;
+            this.labelNombreMenu.Location = new System.Drawing.Point(6, 26);
+            this.labelNombreMenu.Name = "labelNombreMenu";
+            this.labelNombreMenu.Size = new System.Drawing.Size(50, 13);
+            this.labelNombreMenu.TabIndex = 10;
+            this.labelNombreMenu.Text = "Nombre: ";
+            // 
+            // groupBoxPedido
+            // 
+            this.groupBoxPedido.Controls.Add(this.labelNombreMenu);
+            this.groupBoxPedido.Controls.Add(this.groupBoxModPedido);
+            this.groupBoxPedido.Controls.Add(this.buttonEnviar);
+            this.groupBoxPedido.Controls.Add(this.textBoxNombreMenu);
+            this.groupBoxPedido.Controls.Add(this.labelHora);
+            this.groupBoxPedido.Controls.Add(this.textBoxHora);
+            this.groupBoxPedido.Location = new System.Drawing.Point(289, 70);
+            this.groupBoxPedido.Name = "groupBoxPedido";
+            this.groupBoxPedido.Size = new System.Drawing.Size(348, 367);
+            this.groupBoxPedido.TabIndex = 18;
+            this.groupBoxPedido.TabStop = false;
+            this.groupBoxPedido.Text = "Pedido";
+            this.groupBoxPedido.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button_lista_prod);
-            this.Controls.Add(this.textBoxHora);
-            this.Controls.Add(this.labelHora);
-            this.Controls.Add(this.textBoxNombreMenu);
-            this.Controls.Add(this.labelNombreMenu);
-            this.Controls.Add(this.BievenidoNombre);
-            this.Controls.Add(this.buttonEnviar);
-            this.Controls.Add(this.labelPedido);
+            this.ClientSize = new System.Drawing.Size(651, 450);
             this.Controls.Add(this.groupBoxPedido);
+            this.Controls.Add(this.buttonListPedido);
+            this.Controls.Add(this.buttonProdCocina);
+            this.Controls.Add(this.listBoxProdPedidos);
+            this.Controls.Add(this.button_lista_prod);
+            this.Controls.Add(this.BievenidoNombre);
+            this.Controls.Add(this.labelPedido);
             this.Controls.Add(this.labelTituloMenu);
             this.Name = "FormMenu";
             this.Text = "FormMenu";
             this.Load += new System.EventHandler(this.FormMenu_Load);
+            this.groupBoxModPedido.ResumeLayout(false);
+            this.groupBoxModPedido.PerformLayout();
             this.groupBoxPedido.ResumeLayout(false);
+            this.groupBoxPedido.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,19 +269,22 @@
 
         private System.Windows.Forms.Label labelTituloMenu;
         private System.Windows.Forms.Button buttonAgregar;
-        private System.Windows.Forms.Button buttonMod;
-        private System.Windows.Forms.GroupBox groupBoxPedido;
-        private System.Windows.Forms.ComboBox comboBoxMod;
-        private System.Windows.Forms.ComboBox comboBoxAgregar;
+        private System.Windows.Forms.Button buttonDel;
+        private System.Windows.Forms.GroupBox groupBoxModPedido;
+        private System.Windows.Forms.ComboBox comboBoxAgregarPlato;
         private System.Windows.Forms.Label labelPedido;
         private System.Windows.Forms.Button buttonEnviar;
         private System.Windows.Forms.Label BievenidoNombre;
-        private System.Windows.Forms.Label labelNombreMenu;
         private System.Windows.Forms.TextBox textBoxNombreMenu;
-        private System.Windows.Forms.Label labelHora;
         private System.Windows.Forms.TextBox textBoxHora;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button_lista_prod;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxProdPedidos;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonProdCocina;
+        private System.Windows.Forms.Button buttonListPedido;
+        private System.Windows.Forms.Label labelHora;
+        private System.Windows.Forms.Label labelNombreMenu;
+        private System.Windows.Forms.GroupBox groupBoxPedido;
     }
 }
