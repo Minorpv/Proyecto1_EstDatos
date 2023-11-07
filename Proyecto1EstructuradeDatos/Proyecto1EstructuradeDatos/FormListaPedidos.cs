@@ -24,6 +24,8 @@ namespace Proyecto1EstructuradeDatos
         //Eventos
         private void FormListaPedidos_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+            textBoxHora.Text = DateTime.Now.ToString("hh:mm:ss");
             imprimirColaPedidos(ColaPedidos);
         }
 
@@ -38,8 +40,10 @@ namespace Proyecto1EstructuradeDatos
             ColaPedido.Enqueue(pedido);
         }
 
-        public void sacardeCola( Queue ColaPedido) 
+        public void sacardeCola(Queue ColaPedido) 
         {
+            string pedidotext = ColaPedido.Peek().ToString();
+            FormStats.agregarArrayPed(pedidotext);
             ColaPedido.Dequeue();
             int indice = listBoxColaPedido.SelectedIndex;
             // Verificar que haya un elemento seleccionado
@@ -61,7 +65,17 @@ namespace Proyecto1EstructuradeDatos
 
         private void buttonPedidoComp_Click(object sender, EventArgs e)
         {
+            int indice = listBoxColaPedido.SelectedIndex;
+            FormStats.cantPedListos++;
+            FormStats.HoraSalida =textBoxHora.Text;
+            FormStats.calcMinEspera();
             sacardeCola(ColaPedidos);
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            textBoxHora.Text = DateTime.Now.ToString("hh:mm:ss");
+            timer1.Start();
         }
     }
 }

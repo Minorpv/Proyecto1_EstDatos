@@ -11,6 +11,7 @@ namespace Proyecto1EstructuradeDatos
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
+        ///             ClsProductos.inicializarArrayCodigo();
         [STAThread]
         static void Main()
         {

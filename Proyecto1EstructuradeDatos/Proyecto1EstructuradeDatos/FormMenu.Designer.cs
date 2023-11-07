@@ -48,6 +48,7 @@
             this.labelHora = new System.Windows.Forms.Label();
             this.labelNombreMenu = new System.Windows.Forms.Label();
             this.groupBoxPedido = new System.Windows.Forms.GroupBox();
+            this.buttonStats = new System.Windows.Forms.Button();
             this.groupBoxModPedido.SuspendLayout();
             this.groupBoxPedido.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +58,7 @@
             this.labelTituloMenu.AutoSize = true;
             this.labelTituloMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTituloMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.labelTituloMenu.Location = new System.Drawing.Point(344, 9);
+            this.labelTituloMenu.Location = new System.Drawing.Point(257, 9);
             this.labelTituloMenu.Name = "labelTituloMenu";
             this.labelTituloMenu.Size = new System.Drawing.Size(103, 39);
             this.labelTituloMenu.TabIndex = 0;
@@ -119,7 +120,7 @@
             this.labelPedido.BackColor = System.Drawing.SystemColors.Window;
             this.labelPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPedido.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.labelPedido.Location = new System.Drawing.Point(102, 73);
+            this.labelPedido.Location = new System.Drawing.Point(104, 46);
             this.labelPedido.Name = "labelPedido";
             this.labelPedido.Size = new System.Drawing.Size(79, 25);
             this.labelPedido.TabIndex = 5;
@@ -127,7 +128,7 @@
             // 
             // buttonEnviar
             // 
-            this.buttonEnviar.Location = new System.Drawing.Point(31, 304);
+            this.buttonEnviar.Location = new System.Drawing.Point(47, 250);
             this.buttonEnviar.Name = "buttonEnviar";
             this.buttonEnviar.Size = new System.Drawing.Size(257, 47);
             this.buttonEnviar.TabIndex = 7;
@@ -168,7 +169,7 @@
             // button_lista_prod
             // 
             this.button_lista_prod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_lista_prod.Location = new System.Drawing.Point(508, 8);
+            this.button_lista_prod.Location = new System.Drawing.Point(492, 391);
             this.button_lista_prod.Name = "button_lista_prod";
             this.button_lista_prod.Size = new System.Drawing.Size(129, 47);
             this.button_lista_prod.TabIndex = 14;
@@ -180,25 +181,26 @@
             // 
             this.listBoxProdPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxProdPedidos.FormattingEnabled = true;
-            this.listBoxProdPedidos.Location = new System.Drawing.Point(12, 100);
+            this.listBoxProdPedidos.Location = new System.Drawing.Point(12, 74);
             this.listBoxProdPedidos.Name = "listBoxProdPedidos";
-            this.listBoxProdPedidos.Size = new System.Drawing.Size(262, 329);
+            this.listBoxProdPedidos.Size = new System.Drawing.Size(262, 303);
             this.listBoxProdPedidos.TabIndex = 15;
             // 
             // buttonProdCocina
             // 
             this.buttonProdCocina.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProdCocina.Location = new System.Drawing.Point(147, 6);
+            this.buttonProdCocina.Location = new System.Drawing.Point(336, 391);
             this.buttonProdCocina.Name = "buttonProdCocina";
             this.buttonProdCocina.Size = new System.Drawing.Size(129, 47);
             this.buttonProdCocina.TabIndex = 16;
             this.buttonProdCocina.Text = "Productos en cocina";
             this.buttonProdCocina.UseVisualStyleBackColor = true;
+            this.buttonProdCocina.Click += new System.EventHandler(this.buttonProdCocina_Click);
             // 
             // buttonListPedido
             // 
             this.buttonListPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonListPedido.Location = new System.Drawing.Point(12, 6);
+            this.buttonListPedido.Location = new System.Drawing.Point(174, 391);
             this.buttonListPedido.Name = "buttonListPedido";
             this.buttonListPedido.Size = new System.Drawing.Size(129, 47);
             this.buttonListPedido.TabIndex = 17;
@@ -234,17 +236,30 @@
             this.groupBoxPedido.Controls.Add(this.textBoxHora);
             this.groupBoxPedido.Location = new System.Drawing.Point(289, 70);
             this.groupBoxPedido.Name = "groupBoxPedido";
-            this.groupBoxPedido.Size = new System.Drawing.Size(348, 367);
+            this.groupBoxPedido.Size = new System.Drawing.Size(348, 307);
             this.groupBoxPedido.TabIndex = 18;
             this.groupBoxPedido.TabStop = false;
             this.groupBoxPedido.Text = "Pedido";
             this.groupBoxPedido.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // buttonStats
+            // 
+            this.buttonStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStats.Location = new System.Drawing.Point(19, 391);
+            this.buttonStats.Name = "buttonStats";
+            this.buttonStats.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.buttonStats.Size = new System.Drawing.Size(129, 47);
+            this.buttonStats.TabIndex = 19;
+            this.buttonStats.Text = "Estadísticas";
+            this.buttonStats.UseVisualStyleBackColor = true;
+            this.buttonStats.Click += new System.EventHandler(this.buttonStats_Click);
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 450);
+            this.Controls.Add(this.buttonStats);
             this.Controls.Add(this.groupBoxPedido);
             this.Controls.Add(this.buttonListPedido);
             this.Controls.Add(this.buttonProdCocina);
@@ -286,5 +301,6 @@
         private System.Windows.Forms.Label labelHora;
         private System.Windows.Forms.Label labelNombreMenu;
         private System.Windows.Forms.GroupBox groupBoxPedido;
+        private System.Windows.Forms.Button buttonStats;
     }
 }

@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonPedidoComp = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxColaPedido = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.textBoxHora = new System.Windows.Forms.TextBox();
+            this.labelHora = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonPedidoComp
@@ -64,19 +69,52 @@
             this.listBoxColaPedido.FormattingEnabled = true;
             this.listBoxColaPedido.Location = new System.Drawing.Point(13, 88);
             this.listBoxColaPedido.Name = "listBoxColaPedido";
-            this.listBoxColaPedido.Size = new System.Drawing.Size(775, 303);
+            this.listBoxColaPedido.Size = new System.Drawing.Size(775, 342);
             this.listBoxColaPedido.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(172, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Seleccione el pedido de más arriba";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // textBoxHora
+            // 
+            this.textBoxHora.Location = new System.Drawing.Point(469, 60);
+            this.textBoxHora.Name = "textBoxHora";
+            this.textBoxHora.ReadOnly = true;
+            this.textBoxHora.Size = new System.Drawing.Size(120, 20);
+            this.textBoxHora.TabIndex = 5;
+            // 
+            // labelHora
+            // 
+            this.labelHora.AutoSize = true;
+            this.labelHora.Location = new System.Drawing.Point(430, 63);
+            this.labelHora.Name = "labelHora";
+            this.labelHora.Size = new System.Drawing.Size(33, 13);
+            this.labelHora.TabIndex = 6;
+            this.labelHora.Text = "Hora:";
             // 
             // FormListaPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelHora);
+            this.Controls.Add(this.textBoxHora);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.listBoxColaPedido);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonPedidoComp);
             this.Name = "FormListaPedidos";
-            this.Text = "FormListaPedidos";
+            this.Text = "Lista de Pedidos";
             this.Load += new System.EventHandler(this.FormListaPedidos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -87,5 +125,9 @@
         private System.Windows.Forms.Button buttonPedidoComp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBoxColaPedido;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox textBoxHora;
+        private System.Windows.Forms.Label labelHora;
     }
 }

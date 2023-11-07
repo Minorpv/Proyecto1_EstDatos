@@ -20,6 +20,8 @@ namespace Proyecto1EstructuradeDatos
             InitializeComponent();
             FormMenu.CodPedido = "0";
             Queue ColaPedidosFinal = FormListaPedidos.inicializarCola(FormListaPedidos.ColaPedidos);
+            Stack PilaProd = FormProdCocina.inicializarStack(FormProdCocina.PilaProd);
+            FormProdCocina.PilaProd = PilaProd;
             FormListaPedidos.ColaPedidos = ColaPedidosFinal;
         }
 
@@ -31,7 +33,7 @@ namespace Proyecto1EstructuradeDatos
         {
             listBoxProdPedidos.Items.Add(comboBoxAgregarPlato.Text);
         }
-        
+
         private void FormMenu_Load(object sender, EventArgs e)
         {
             //Creador del timer para obtener la hora
@@ -46,7 +48,7 @@ namespace Proyecto1EstructuradeDatos
                 comboBoxAgregarPlato.Items.Add(arrayListNom[i]);
             }
         }
-        
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             textBoxHora.Text = DateTime.Now.ToString("hh:mm:ss");
@@ -80,7 +82,16 @@ namespace Proyecto1EstructuradeDatos
         {
             string pedido = creacionPedido();
             FormListaPedidos.Encolar(pedido, FormListaPedidos.ColaPedidos);
+            string listProd = "";
+            foreach (var item in listBoxProdPedidos.Items)
+            {
+                string prod = item.ToString();
+                listProd = prod;
+                FormProdCocina.PushStack(listProd, FormProdCocina.PilaProd);
+            }
             listBoxProdPedidos.Items.Clear();
+            textBoxNombreMenu.Text = "";
+            comboBoxAgregarPlato.Text = "";
         }
 
         private void buttonListPedido_Click(object sender, EventArgs e)
@@ -91,28 +102,40 @@ namespace Proyecto1EstructuradeDatos
 
 
         //Métodos
-        public string creacionPedido() 
+        public string creacionPedido()
         {
-            string numPedido = FormMenu.CodPedido;
-            FormMenu.CodPedido = int.Parse(FormMenu.CodPedido) + 1. ToString(); 
+            int numPedido = int.Parse(FormMenu.CodPedido);
+            numPedido = numPedido + 1;
+            FormMenu.CodPedido = numPedido.ToString();
             //Se crea la variable para almacenar las variables de los pedidos
             string platosPed = "";
-            //Se establece el nombre del cliente con el texto de su respectiva textbox en el menu
-            string NomPedido = textBoxNombreMenu.Text;
-            //Ciclo foreach para colocar todos los productos de la listboxx en un solo string
             foreach (var item in listBoxProdPedidos.Items)
             {
                 string productos = item + ", \n";
                 platosPed += productos;
             }
+            //Se establece el nombre del cliente con el texto de su respectiva textbox en el menu
+            string NomPedido = textBoxNombreMenu.Text;
+            //Ciclo foreach para colocar todos los productos de la listboxx en un solo string
             //Captura la hora en el string
             string horaRebPedido = textBoxHora.Text;
+            FormStats.HoraEntrada = horaRebPedido;
+            ClsPedidos Pedidos= new ClsPedidos(numPedido, NomPedido, platosPed, horaRebPedido);
             //Se coloca todo el pedido en un solo string
-            string Pedido = $"Pedido#: {numPedido} \n Nombre: {NomPedido} \nPlatos: {platosPed} \n Hora: {horaRebPedido}";
+            string Pedido = $"Pedido#: {FormMenu.CodPedido} \n Nombre: {NomPedido} \nPlatos: {platosPed} \n Hora: {horaRebPedido}";
             return Pedido;
         }
 
+        private void buttonProdCocina_Click(object sender, EventArgs e)
+        {
+            FormProdCocina formProdCocina = new FormProdCocina();
+            formProdCocina.Show();
+        }
 
-
+        private void buttonStats_Click(object sender, EventArgs e)
+        {
+            FormStats formStats = new FormStats();
+            formStats.Show();
+        }
     }
 }
