@@ -118,7 +118,6 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar Productos";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // comboBox_TipoProd
             // 
@@ -216,7 +215,7 @@
             this.Controls.Add(this.listBox_Prod);
             this.Controls.Add(this.titulo_listaProd);
             this.Name = "FormListaProd";
-            this.Text = "FormListaProd";
+            this.Text = "Lista de productos";
             this.Load += new System.EventHandler(this.FormListaProd_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

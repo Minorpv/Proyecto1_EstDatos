@@ -19,6 +19,7 @@ namespace Proyecto1EstructuradeDatos
             //Inicialización de los componentes del form
             InitializeComponent();
             FormMenu.CodPedido = "0";
+            //Inicialización de colas y pilas
             Queue ColaPedidosFinal = FormListaPedidos.inicializarCola(FormListaPedidos.ColaPedidos);
             Stack PilaProd = FormProdCocina.inicializarStack(FormProdCocina.PilaProd);
             FormProdCocina.PilaProd = PilaProd;
@@ -31,15 +32,13 @@ namespace Proyecto1EstructuradeDatos
         //Eventos
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
+            //Al darle click al botón agregar el texto de la combobox se agrega a la listbox del pedido 
             listBoxProdPedidos.Items.Add(comboBoxAgregarPlato.Text);
         }
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            //Creador del timer para obtener la hora
-            timer1.Start();
-            textBoxHora.Text = DateTime.Now.ToString("hh:mm:ss");
-            //Agregar los nombres de la lista al combo box
+            //Agregar los nombres de la lista de productos al combo box
             string[] ArrayNomPlato = ClsProductos.InicializarArrayNomProd();
             ArrayList arrayListNom = new ArrayList();
             arrayListNom.AddRange(ArrayNomPlato);
@@ -47,6 +46,9 @@ namespace Proyecto1EstructuradeDatos
             {
                 comboBoxAgregarPlato.Items.Add(arrayListNom[i]);
             }
+            //Creador del timer para obtener la hora
+            timer1.Start();
+            textBoxHora.Text = DateTime.Now.ToString("hh:mm:ss");
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -68,18 +70,14 @@ namespace Proyecto1EstructuradeDatos
             // Verificar que haya un elemento seleccionado
             if (indice != -1)
             {
-                // Eliminar el elemento del índice
+                // Eliminar el elemento del índice seleccionado
                 listBoxProdPedidos.Items.RemoveAt(indice);
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonEnviar_Click(object sender, EventArgs e)
         {
+            //Se instancia el metodo creación de pedido en un string
             string pedido = creacionPedido();
             FormListaPedidos.Encolar(pedido, FormListaPedidos.ColaPedidos);
             string listProd = "";
@@ -96,18 +94,33 @@ namespace Proyecto1EstructuradeDatos
 
         private void buttonListPedido_Click(object sender, EventArgs e)
         {
+            //Se abre el form de la Lista de productos
             FormListaPedidos formListaProd = new FormListaPedidos();
             formListaProd.Show();
+        }
+
+        private void buttonProdCocina_Click(object sender, EventArgs e)
+        {
+            //Se abre el form de la pila de los productos de la cocina
+            FormProdCocina formProdCocina = new FormProdCocina();
+            formProdCocina.Show();
+        }
+
+        private void buttonStats_Click(object sender, EventArgs e)
+        {
+            //Se abre el form que muestra las estadísticas de la ejecución
+            FormStats formStats = new FormStats();
+            formStats.Show();
         }
 
 
         //Métodos
         public string creacionPedido()
         {
+            //Se crean las varibles para almacenar las variables de los pedidos
             int numPedido = int.Parse(FormMenu.CodPedido);
             numPedido = numPedido + 1;
             FormMenu.CodPedido = numPedido.ToString();
-            //Se crea la variable para almacenar las variables de los pedidos
             string platosPed = "";
             foreach (var item in listBoxProdPedidos.Items)
             {
@@ -126,16 +139,6 @@ namespace Proyecto1EstructuradeDatos
             return Pedido;
         }
 
-        private void buttonProdCocina_Click(object sender, EventArgs e)
-        {
-            FormProdCocina formProdCocina = new FormProdCocina();
-            formProdCocina.Show();
-        }
 
-        private void buttonStats_Click(object sender, EventArgs e)
-        {
-            FormStats formStats = new FormStats();
-            formStats.Show();
-        }
     }
 }

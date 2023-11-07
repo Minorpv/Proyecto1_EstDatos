@@ -240,7 +240,6 @@
             this.groupBoxPedido.TabIndex = 18;
             this.groupBoxPedido.TabStop = false;
             this.groupBoxPedido.Text = "Pedido";
-            this.groupBoxPedido.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // buttonStats
             // 
@@ -269,7 +268,7 @@
             this.Controls.Add(this.labelPedido);
             this.Controls.Add(this.labelTituloMenu);
             this.Name = "FormMenu";
-            this.Text = "FormMenu";
+            this.Text = "Menu";
             this.Load += new System.EventHandler(this.FormMenu_Load);
             this.groupBoxModPedido.ResumeLayout(false);
             this.groupBoxModPedido.PerformLayout();

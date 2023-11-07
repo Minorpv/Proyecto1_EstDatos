@@ -44,7 +44,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.ForeColor = System.Drawing.Color.YellowGreen;
             this.label1.Location = new System.Drawing.Point(288, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(205, 39);
@@ -159,8 +159,7 @@
             this.Controls.Add(this.listBoxPedRealizado);
             this.Controls.Add(this.label1);
             this.Name = "FormStats";
-            this.Text = " ";
-            this.Load += new System.EventHandler(this.FormStats_Load);
+            this.Text = " Zona de estadíticas";
             this.ResumeLayout(false);
             this.PerformLayout();
 

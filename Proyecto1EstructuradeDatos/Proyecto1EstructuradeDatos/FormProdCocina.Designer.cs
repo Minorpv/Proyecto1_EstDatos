@@ -88,7 +88,7 @@
             this.Controls.Add(this.label_TituloProdCocina);
             this.Controls.Add(this.buttonProdComp);
             this.Name = "FormProdCocina";
-            this.Text = "FormProdCocina";
+            this.Text = "Productos en cocina";
             this.Load += new System.EventHandler(this.FormProdCocina_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -16,7 +16,7 @@ namespace Proyecto1EstructuradeDatos
         {
             InitializeComponent();
         }
-
+         //Propiedades de la clase
         public static int cantPedListos { get; set; } = 0;
 
         public static float PromEspera { get; set; }
@@ -26,20 +26,15 @@ namespace Proyecto1EstructuradeDatos
         public static string HoraSalida { get; set; }
 
         public static int[] tiempoDeEspera = new int[50];
+        public static int indiceArrayTP { get; set; }
 
         public static float PedxHora { get; set; }
-
-        public static int indiceArrayTP {  get; set; }
 
         public static string[] Pedidos = new string[50];
 
         public static int indiceArrayPed = 0;
 
-        private void FormStats_Load(object sender, EventArgs e)
-        {
-            
-        }
-
+        //Eventos
         private void button1_Click(object sender, EventArgs e)
         {
             //Lista de pedidos realizados
@@ -71,6 +66,7 @@ namespace Proyecto1EstructuradeDatos
 
         }
 
+        //Métodos
         public static void calcMinEspera() 
         {
             //Minutos de entrada
@@ -99,6 +95,7 @@ namespace Proyecto1EstructuradeDatos
 
         public float CicloPedXHora() 
         {
+            //Caluclo del los pedidos x hora
             float PromEsperaXHora = PromEspera * 60;
             PedxHora = PromEsperaXHora / cantPedListos;
             return PedxHora;
@@ -106,6 +103,7 @@ namespace Proyecto1EstructuradeDatos
 
         public static void agregarArrayPed(string pedidotext) 
         {
+            //Método para agregar pedidos al array de Pedidos Completados
             Pedidos[indiceArrayPed] = pedidotext;
             indiceArrayPed = indiceArrayPed+1;
         }

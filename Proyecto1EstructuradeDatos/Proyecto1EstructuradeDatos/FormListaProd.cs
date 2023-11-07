@@ -20,12 +20,15 @@ namespace Proyecto1EstructuradeDatos
             InitializeComponent();
         }
 
+        //Eventos
+
         private void FormListaProd_Load(object sender, EventArgs e)
         {
             //Se inicializa la lista en la pestaña ClslistaProd
             int[] arraycod = ClsProductos.InicializarArrayCod();
             string[] arrayNomPlato = ClsProductos.InicializarArrayNomProd();
             string[] arrayTipo = ClsProductos.InicializarArrayTipo();
+            // se coloca el menu base que se implementó
             for (int i = 0; i < arraycod.Length; i++) 
             {
                 string cod = arraycod[i].ToString();
@@ -33,27 +36,21 @@ namespace Proyecto1EstructuradeDatos
                 string tipo = arrayTipo[i].ToString();
                 listBox_Prod.Items.Add($"{cod} |  {nomPlato}        {tipo}");
             }
-            // se coloca el menu base que se implementó
-
-            //Se pone siempre al ingresar a  la pestaña el mouse en la textbox del codigo
+            //Se pone siempre al ingresar a la pestaña el mouse en la textbox del codigo
             textBox_CodProd.Focus();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void button_AgregarProd_Click(object sender, EventArgs e)
         {
+            //Se recogen los textos de las textbox y la combobox en las siguientes variables:
             int cod = int.Parse(textBox_CodProd.Text);
             string nom = textBox_NombreProd.Text;
             string tipo = comboBox_TipoProd.Text;
             //Se toman los datos de las textbox se agrupan en un string y se añade a la listbox
             string dato_prod = string.Concat(textBox_CodProd.Text, " ||", textBox_NombreProd.Text, "       ", comboBox_TipoProd.Text);
-            listBox_Prod.Items.Add(dato_prod);
             //Se añade la información en la listbox
-            //Clsproductos.agregarArray(cod, nom, tipo);
+            listBox_Prod.Items.Add(dato_prod);
             //Se limpia la información de las textbox
             textBox_CodProd.Clear();
             textBox_NombreProd.Clear();
@@ -61,17 +58,7 @@ namespace Proyecto1EstructuradeDatos
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_ModProd_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox_Prod_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
