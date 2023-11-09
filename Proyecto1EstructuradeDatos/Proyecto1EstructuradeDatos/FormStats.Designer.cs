@@ -160,6 +160,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormStats";
             this.Text = " Zona de estadíticas";
+            this.Load += new System.EventHandler(this.FormStats_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

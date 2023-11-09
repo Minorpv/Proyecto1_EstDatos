@@ -99,9 +99,9 @@
             this.label_CodProd.AutoSize = true;
             this.label_CodProd.Location = new System.Drawing.Point(16, 29);
             this.label_CodProd.Name = "label_CodProd";
-            this.label_CodProd.Size = new System.Drawing.Size(40, 13);
+            this.label_CodProd.Size = new System.Drawing.Size(102, 13);
             this.label_CodProd.TabIndex = 5;
-            this.label_CodProd.Text = "Codigo";
+            this.label_CodProd.Text = "Codigo del producto";
             // 
             // groupBox1
             // 

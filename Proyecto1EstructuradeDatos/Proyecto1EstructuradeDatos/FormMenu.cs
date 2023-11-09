@@ -24,10 +24,12 @@ namespace Proyecto1EstructuradeDatos
             Stack PilaProd = FormProdCocina.inicializarStack(FormProdCocina.PilaProd);
             FormProdCocina.PilaProd = PilaProd;
             FormListaPedidos.ColaPedidos = ColaPedidosFinal;
+            NomProd = ClsProductos.InicializarArrayNomProd();
         }
 
         //Propiedad para el cálculo de la cantidad de pedidos (Funciona como contador)
         public static string CodPedido { get; set; }
+        public static string[] NomProd { get; set; }
 
         //Eventos
         private void buttonAgregar_Click(object sender, EventArgs e)
@@ -38,13 +40,9 @@ namespace Proyecto1EstructuradeDatos
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            //Agregar los nombres de la lista de productos al combo box
-            string[] ArrayNomPlato = ClsProductos.InicializarArrayNomProd();
-            ArrayList arrayListNom = new ArrayList();
-            arrayListNom.AddRange(ArrayNomPlato);
-            for (int i = 0; i < arrayListNom.Capacity; i++)
+            for (int i = 0; i < NomProd.Length; i++)
             {
-                comboBoxAgregarPlato.Items.Add(arrayListNom[i]);
+                comboBoxAgregarPlato.Items.Add(NomProd[i]);
             }
             //Creador del timer para obtener la hora
             timer1.Start();
@@ -129,7 +127,7 @@ namespace Proyecto1EstructuradeDatos
             }
             //Se establece el nombre del cliente con el texto de su respectiva textbox en el menu
             string NomPedido = textBoxNombreMenu.Text;
-            //Ciclo foreach para colocar todos los productos de la listboxx en un solo string
+            
             //Captura la hora en el string
             string horaRebPedido = textBoxHora.Text;
             FormStats.HoraEntrada = horaRebPedido;

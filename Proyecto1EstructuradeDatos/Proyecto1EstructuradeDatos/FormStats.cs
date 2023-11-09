@@ -107,5 +107,10 @@ namespace Proyecto1EstructuradeDatos
             Pedidos[indiceArrayPed] = pedidotext;
             indiceArrayPed = indiceArrayPed+1;
         }
+
+        private void FormStats_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
